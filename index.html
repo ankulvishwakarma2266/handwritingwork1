@@ -1,256 +1,341 @@
-<!DOCTYPE html>
-
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Work From Home Handwriting Job</title>
-
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
-
+<div class="job-page">
 <style>
-
-*{
-box-sizing:border-box;
-margin:0;
-padding:0;
+.job-page {
+  background:#001500;
+  color:#eaffea;
+  font-family:Arial,sans-serif;
+  padding:25px 18px;
+  overflow:hidden;
+  position:relative;
+  border:1px solid #064b15;
+  border-radius:25px;
+  text-align:center;
 }
-
-body{
-font-family:'Poppins',sans-serif;
-background:linear-gradient(135deg,#0b6eb8,#18c13d);
+.job-page * {box-sizing:border-box;}
+.job-page:before {
+  content:"";
+  position:absolute;
+  inset:-100px;
+  background:repeating-linear-gradient(
+    48deg,
+    transparent 0px,
+    transparent 125px,
+    #00d900 127px,
+    transparent 131px,
+    transparent 230px,
+    #e5c000 232px,
+    transparent 236px,
+    transparent 340px,
+    #b9d5c3 342px,
+    transparent 346px
+  );
+  opacity:.65;
+  pointer-events:none;
 }
-
-/* Main Container */
-
-.sio-main-container{
-display:flex;
-justify-content:center;
-align-items:center;
-min-height:100vh;
-padding:20px;
+.job-content {
+  position:relative;
+  z-index:1;
 }
-
-/* Card */
-
-.sio-landing-wrap{
-max-width:520px;
-width:100%;
-text-align:center;
-background:#fff;
-padding:30px 25px;
-border-radius:18px;
-box-shadow:0 10px 30px rgba(0,0,0,.15);
+.trust {
+  display:inline-block;
+  background:#00db00;
+  color:#001000;
+  padding:14px 28px;
+  border-radius:35px;
+  font-weight:bold;
+  font-size:17px;
+  margin:10px 0 25px;
 }
-
-/* Pulse Animation */
-
-@keyframes pulse-blue{
-0%{box-shadow:0 0 0 0 rgba(11,110,184,.7)}
-70%{box-shadow:0 0 0 18px rgba(11,110,184,0)}
-100%{box-shadow:0 0 0 0 rgba(11,110,184,0)}
+.seal {
+  width:195px;
+  height:195px;
+  margin:0 auto 28px;
+  border:9px solid #7bff00;
+  border-radius:50%;
+  background:#fff1c9;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  box-shadow:0 0 0 7px #001900 inset;
 }
-
-/* Button */
-
-.sio-btn{
-display:block;
-width:100%;
-background:linear-gradient(45deg,#0b6eb8,#0a8be0);
-color:#fff;
-padding:16px;
-font-size:16px;
-font-weight:700;
-border-radius:50px;
-text-decoration:none;
-margin:15px 0;
-transition:.3s;
-animation:pulse-blue 2s infinite;
+.seal-inner {
+  width:155px;
+  height:155px;
+  border:5px double #1a4c69;
+  border-radius:50%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  flex-direction:column;
+  color:#17435b;
+  font-weight:bold;
+  font-size:14px;
 }
-
-.sio-btn:hover{
-transform:scale(1.05);
-background:linear-gradient(45deg,#095c9d,#0b6eb8);
+.seal-inner .emblem {font-size:42px;}
+.main-title {
+  color:#00e600;
+  font-size:34px;
+  line-height:1.2;
+  margin:20px 0 10px;
 }
-
-/* Profile */
-
-.sio-profile{
-margin:20px 0;
+.sub-title {
+  color:#aaff58;
+  font-size:20px;
+  font-weight:bold;
 }
-
-.sio-avatar{
-width:110px;
-height:110px;
-margin:auto;
-border-radius:50%;
-overflow:hidden;
-border:4px solid #fff;
-box-shadow:0 5px 15px rgba(0,0,0,.2);
+.tagline {
+  color:#91a995;
+  font-size:20px;
+  margin:28px 0 32px;
 }
-
-.sio-avatar img{
-width:100%;
-height:100%;
-object-fit:cover;
+.telegram {
+  display:block;
+  background:#00df00;
+  color:#001000;
+  text-decoration:none;
+  font-size:25px;
+  font-weight:bold;
+  padding:23px 10px;
+  border-radius:32px;
+  border:1px solid #a2ff00;
+  margin:25px 0 45px;
+  box-shadow:0 0 12px #00b90030;
 }
-
-.sio-headline{
-margin-top:12px;
-font-size:24px;
-font-weight:800;
-color:#18c13d;
+.telegram:hover {background:#28ff28;}
+.section-title {
+  font-size:28px;
+  margin:0 0 14px;
 }
-
-/* Features */
-
-.sio-features{
-margin-top:10px;
+.section-sub {
+  color:#91a995;
+  font-size:19px;
+  margin-bottom:25px;
 }
-
-.sio-feature{
-display:flex;
-justify-content:center;
-align-items:center;
-gap:10px;
-margin:8px 0;
+.project {
+  text-align:left;
+  border:1px solid #07551b;
+  background:rgba(0,20,0,.76);
+  border-radius:25px;
+  padding:22px;
+  margin:18px 0;
 }
-
-.sio-feature p{
-font-weight:600;
-color:#333;
+.project-head {
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:8px;
 }
-
-.sio-tick{
-width:24px;
-height:24px;
-border-radius:50%;
-background:#eaf7ea;
-display:flex;
-align-items:center;
-justify-content:center;
-font-weight:800;
-color:#18c13d;
-font-size:14px;
+.project h3 {
+  font-size:25px;
+  margin:0;
 }
-
-/* Highlight */
-
-.sio-highlight{
-margin:18px 0;
-padding:10px;
-background:#f1f8ff;
-border-radius:10px;
-font-weight:700;
-color:#0b6eb8;
+.limit {
+  background:#003d09;
+  color:#8cff32;
+  border:1px solid #075c19;
+  padding:12px 14px;
+  border-radius:14px;
+  font-weight:bold;
+  white-space:nowrap;
 }
-
-/* Disclaimer */
-
-.sio-disclaimer{
-margin-top:20px;
-font-size:11px;
-color:#777;
-line-height:1.4;
+.requirement {
+  color:#9bac9e;
+  font-size:19px;
+  margin-top:18px;
 }
-
-/* Mobile */
-
-@media(max-width:480px){
-
-.sio-btn{
-font-size:14px;
-padding:14px;
+.pages {
+  font-size:22px;
+  margin-top:8px;
 }
-
-.sio-headline{
-font-size:21px;
+.pages span {color:#a5b6a9;}
+.line {
+  height:1px;
+  background:#16451e;
+  margin:20px 0;
 }
-
-.sio-feature p{
-font-size:13px;
+.reward-label {
+  color:#9cac9e;
+  font-size:16px;
 }
-
+.reward {
+  color:#8bff24;
+  font-size:30px;
+  font-weight:bold;
+  margin-top:12px;
 }
-
+.feature {
+  display:flex;
+  align-items:center;
+  text-align:left;
+  gap:20px;
+  border:1px solid #07551b;
+  border-radius:28px;
+  padding:17px;
+  margin:15px 0;
+  background:rgba(0,25,0,.8);
+}
+.feature-icon {
+  min-width:78px;
+  height:78px;
+  background:#00dc00;
+  border-radius:22px;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  color:#001000;
+  font-size:35px;
+}
+.feature h3 {
+  font-size:21px;
+  margin:0 0 8px;
+}
+.feature p {
+  color:#a1b3a5;
+  font-size:18px;
+  margin:0;
+}
+.limited {
+  color:#ffcf00;
+  font-size:22px;
+  font-weight:bold;
+  margin:28px 0;
+}
+.fresher {
+  display:inline-block;
+  border:1px solid #07551b;
+  border-radius:30px;
+  padding:17px 20px;
+  color:#9bb09e;
+  font-size:17px;
+  margin:0 0 25px;
+}
+.footer {
+  font-size:20px;
+  margin-top:25px;
+  color:#fff;
+}
+@media(max-width:480px) {
+  .job-page {padding:18px 14px;}
+  .main-title {font-size:30px;}
+  .telegram {font-size:21px;padding:21px 5px;}
+  .project {padding:19px;}
+  .project h3 {font-size:22px;}
+  .limit {font-size:14px;padding:10px;}
+}
 </style>
 
-</head>
+<div class="job-content">
 
-<body>
+<div class="trust">✧ MOST TRUSTED WORK</div>
 
-<div class="sio-main-container">
+<div class="seal">
+  <div class="seal-inner">
+    <div>★ GOVERNMENT APPROVED ★</div>
+    <div class="emblem">🏛️</div>
+    <div>INDIA</div>
+    <div>WRITING SERVICE</div>
+  </div>
+</div>
 
-<div class="sio-landing-wrap">
+<h1 class="main-title">WORK FROM HOME JOB ✍️</h1>
+<div class="sub-title">HANDWRITING ASSIGNMENT WORK</div>
 
-<a class="sio-btn" href="https://t.me/+oSCsdPHrOis4ZTM1" target="_blank">
-JOIN TELEGRAM CHANNEL 🚀
+<p class="tagline">
+No Investment · Simple Work · Weekly Payment
+</p>
+
+<a class="telegram" href="https://t.me/YOUR_TELEGRAM_LINK" target="_blank">
+  ➤ JOIN FREE TELEGRAM ➤
 </a>
 
-<div class="sio-profile">
+<h2 class="section-title">Available Projects</h2>
+<div class="section-sub">Full-time and part-time work</div>
 
-<div class="sio-avatar">
-<img src="https://i.ibb.co/YCXHZd6/writing-dp.jpg">
+<div class="project">
+  <div class="project-head">
+    <h3>Project 1</h3>
+    <span class="limit">7 DAYS LIMIT</span>
+  </div>
+  <div class="requirement">Page requirement</div>
+  <div class="pages">50 pages <span>(Front + Back = 100)</span></div>
+  <div class="line"></div>
+  <div class="reward-label">REWARD PAYOUT</div>
+  <div class="reward">₹13,500</div>
 </div>
 
-<div class="sio-headline">
-ONLINE HANDWRITING WORK FROM HOME
+<div class="project">
+  <div class="project-head">
+    <h3>Project 2</h3>
+    <span class="limit">10 DAYS LIMIT</span>
+  </div>
+  <div class="requirement">Page requirement</div>
+  <div class="pages">90 pages <span>(Front + Back = 180)</span></div>
+  <div class="line"></div>
+  <div class="reward-label">REWARD PAYOUT</div>
+  <div class="reward">₹19,000</div>
 </div>
 
+<div class="project">
+  <div class="project-head">
+    <h3>Project 3</h3>
+    <span class="limit">15 DAYS LIMIT</span>
+  </div>
+  <div class="requirement">Page requirement</div>
+  <div class="pages">120 pages <span>(Front + Back = 240)</span></div>
+  <div class="line"></div>
+  <div class="reward-label">REWARD PAYOUT</div>
+  <div class="reward">₹22,000</div>
 </div>
 
-<div class="sio-features">
-
-<div class="sio-feature">
-<div class="sio-tick">✓</div>
-<p>Simple Writing Work – No Experience Needed</p>
+<div class="project">
+  <div class="project-head">
+    <h3>Project 4</h3>
+    <span class="limit">26 DAYS LIMIT</span>
+  </div>
+  <div class="requirement">Page requirement</div>
+  <div class="pages">190 pages <span>(Front + Back = 380)</span></div>
+  <div class="line"></div>
+  <div class="reward-label">REWARD PAYOUT</div>
+  <div class="reward">₹28,000</div>
 </div>
 
-<div class="sio-feature">
-<div class="sio-tick">✓</div>
-<p>Earn ₹15,000 – ₹30,000 Per Month</p>
+<div class="feature">
+  <div class="feature-icon">♧</div>
+  <div>
+    <h3>Job Guarantee</h3>
+    <p>Verified work with weekly payment.</p>
+  </div>
 </div>
 
-<div class="sio-feature">
-<div class="sio-tick">✓</div>
-<p>Work From Home • Flexible Timing</p>
+<div class="feature">
+  <div class="feature-icon">♙</div>
+  <div>
+    <h3>Flexible Work</h3>
+    <p>Part time and full time available.</p>
+  </div>
 </div>
 
-<div class="sio-highlight">
-Limited Seats Available – Apply Today! 🚀
+<div class="feature">
+  <div class="feature-icon">₹</div>
+  <div>
+    <h3>Monthly Earning</h3>
+    <p>Earn ₹18,000 – ₹25,000 monthly.</p>
+  </div>
 </div>
 
-</div>
+<div class="limited">⚡ Limited Seats Available 🚀</div>
 
-<a class="sio-btn" href="https://t.me/+oSCsdPHrOis4ZTM1" target="_blank">
-JOIN TELEGRAM CHANNEL 🚀
+<a class="telegram" href="https://t.me/YOUR_TELEGRAM_LINK" target="_blank">
+  ➤ JOIN FREE TELEGRAM ➤
 </a>
 
-<div class="sio-disclaimer">
-<b style="color:#0a7a3a">Note:</b> This is project-based work. 
-Earnings depend on performance and submission quality.
-</div> Powered By Ankul Ad Agency
+<div class="fresher">
+  ✔ Fresher & Students Can Apply ✔
+</div>
 
+<div class="footer">
+  Ads by Deep Ads Agency
 </div>
 
 </div>
-
-</body>
-<!-- Meta Pixel Code -->
-<script>
-!function(f,b,e,v,n,t,s)
-{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-n.queue=[];t=b.createElement(e);t.async=!0;
-t.src=v;s=b.getElementsByTagName(e)[0];
-s.parentNode.insertBefore(t,s)}(window, document,'script',
-'https://connect.facebook.net/en_US/fbevents.js');
-fbq('init', '1561321476025931');
-fbq('track', 'PageView');
-</script>
-<noscript><img height="1" width="1" style="display:none"
-src="https://www.facebook.com/tr?id=1561321476025931&ev=PageView&noscript=1"
-/></noscript>
-<!-- End Meta Pixel Code -->
-</html>
+</div>
