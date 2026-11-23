@@ -1,226 +1,297 @@
 <div class="job-page">
+
 <style>
 .job-page {
   background:#001500;
   color:#eaffea;
   font-family:Arial,sans-serif;
-  padding:25px 18px;
+  padding:20px 15px 35px;
+  border:1px solid #064c12;
+  border-radius:25px;
   overflow:hidden;
   position:relative;
-  border:1px solid #064b15;
-  border-radius:25px;
   text-align:center;
 }
-.job-page * {box-sizing:border-box;}
+
+.job-page * {
+  box-sizing:border-box;
+}
+
 .job-page:before {
   content:"";
   position:absolute;
-  inset:-100px;
+  inset:0;
+  pointer-events:none;
   background:repeating-linear-gradient(
     48deg,
     transparent 0px,
-    transparent 125px,
-    #00d900 127px,
-    transparent 131px,
-    transparent 230px,
-    #e5c000 232px,
-    transparent 236px,
-    transparent 340px,
-    #b9d5c3 342px,
-    transparent 346px
+    transparent 150px,
+    rgba(0,255,0,.65) 152px,
+    transparent 156px,
+    transparent 280px,
+    rgba(255,190,0,.8) 282px,
+    transparent 286px,
+    transparent 400px,
+    rgba(255,255,255,.55) 402px,
+    transparent 406px
   );
   opacity:.65;
-  pointer-events:none;
 }
+
 .job-content {
   position:relative;
   z-index:1;
 }
+
 .trust {
   display:inline-block;
-  background:#00db00;
-  color:#001000;
-  padding:14px 28px;
-  border-radius:35px;
+  background:#00d500;
+  color:#001900;
+  padding:16px 28px;
+  border-radius:40px;
+  font-size:19px;
   font-weight:bold;
-  font-size:17px;
-  margin:10px 0 25px;
+  margin:15px auto 20px;
 }
+
 .seal {
-  width:195px;
-  height:195px;
-  margin:0 auto 28px;
-  border:9px solid #7bff00;
+  width:190px;
+  height:190px;
+  margin:0 auto 25px;
+  border:9px solid #7dff00;
   border-radius:50%;
-  background:#fff1c9;
+  background:#f5eac7;
   display:flex;
   align-items:center;
   justify-content:center;
-  box-shadow:0 0 0 7px #001900 inset;
+  box-shadow:0 0 15px #00ff00;
 }
+
 .seal-inner {
   width:155px;
   height:155px;
-  border:5px double #1a4c69;
+  border:5px double #174b71;
   border-radius:50%;
+  color:#174b71;
   display:flex;
-  align-items:center;
-  justify-content:center;
   flex-direction:column;
-  color:#17435b;
+  justify-content:center;
+  align-items:center;
   font-weight:bold;
-  font-size:14px;
+  font-size:15px;
+  line-height:1.5;
 }
-.seal-inner .emblem {font-size:42px;}
-.main-title {
-  color:#00e600;
-  font-size:34px;
-  line-height:1.2;
+
+.seal-inner strong {
+  font-size:27px;
+}
+
+.main-heading {
+  color:#00ed00;
+  font-size:38px;
+  font-weight:bold;
   margin:20px 0 10px;
 }
-.sub-title {
-  color:#aaff58;
-  font-size:20px;
+
+.sub-heading {
+  color:#9cff36;
+  font-size:22px;
   font-weight:bold;
 }
-.tagline {
-  color:#91a995;
-  font-size:20px;
-  margin:28px 0 32px;
+
+.description {
+  color:#a7bba7;
+  font-size:21px;
+  margin:25px 0 30px;
+  line-height:1.5;
 }
-.telegram {
-  display:block;
-  background:#00df00;
-  color:#001000;
-  text-decoration:none;
-  font-size:25px;
-  font-weight:bold;
-  padding:23px 10px;
+
+/* LARGE TELEGRAM BUTTON */
+
+.telegram-btn {
+  display:flex;
+  width:100%;
+  min-height:88px;
+  align-items:center;
+  justify-content:center;
+  gap:16px;
+  background:#00d500;
+  color:#001500 !important;
+  border:2px solid #71ff42;
   border-radius:32px;
-  border:1px solid #a2ff00;
-  margin:25px 0 45px;
-  box-shadow:0 0 12px #00b90030;
+  font-size:27px;
+  font-weight:bold;
+  text-decoration:none !important;
+  padding:20px 10px;
+  margin:25px auto 45px;
+  box-shadow:0 0 15px rgba(0,255,0,.25);
+  transition:.2s;
 }
-.telegram:hover {background:#28ff28;}
+
+.telegram-btn:hover {
+  background:#37ff00;
+  transform:scale(1.01);
+}
+
+.telegram-btn span {
+  font-size:32px;
+}
+
 .section-title {
-  font-size:28px;
-  margin:0 0 14px;
+  font-size:32px;
+  color:white;
+  margin:0 0 12px;
 }
-.section-sub {
-  color:#91a995;
-  font-size:19px;
+
+.section-subtitle {
+  font-size:20px;
+  color:#9aaf9a;
   margin-bottom:25px;
 }
-.project {
+
+.project-card {
+  background:rgba(0,25,0,.80);
+  border:1px solid rgba(0,255,55,.28);
+  border-radius:27px;
+  padding:25px 22px;
+  margin:17px 0;
   text-align:left;
-  border:1px solid #07551b;
-  background:rgba(0,20,0,.76);
-  border-radius:25px;
-  padding:22px;
-  margin:18px 0;
 }
-.project-head {
+
+.project-top {
   display:flex;
   justify-content:space-between;
   align-items:center;
   gap:8px;
 }
-.project h3 {
-  font-size:25px;
-  margin:0;
+
+.project-name {
+  font-size:27px;
+  font-weight:bold;
+  color:white;
 }
+
 .limit {
-  background:#003d09;
-  color:#8cff32;
-  border:1px solid #075c19;
+  color:#8dff39;
+  background:#003b08;
+  border:1px solid #075c13;
   padding:12px 14px;
   border-radius:14px;
+  font-size:16px;
   font-weight:bold;
   white-space:nowrap;
 }
-.requirement {
-  color:#9bac9e;
-  font-size:19px;
-  margin-top:18px;
+
+.page-label {
+  color:#a3b6a3;
+  font-size:20px;
+  margin-top:20px;
 }
+
 .pages {
   font-size:22px;
+  color:white;
   margin-top:8px;
+  line-height:1.5;
 }
-.pages span {color:#a5b6a9;}
-.line {
-  height:1px;
-  background:#16451e;
-  margin:20px 0;
+
+.pages span {
+  color:#91a891;
 }
-.reward-label {
-  color:#9cac9e;
-  font-size:16px;
-}
+
 .reward {
-  color:#8bff24;
-  font-size:30px;
+  border-top:1px solid #16421b;
+  margin-top:20px;
+  padding-top:18px;
+}
+
+.reward-label {
+  color:#a1b6a1;
+  font-size:17px;
+}
+
+.reward-price {
+  color:#8dff31;
+  font-size:31px;
   font-weight:bold;
   margin-top:12px;
 }
+
 .feature {
   display:flex;
   align-items:center;
   text-align:left;
   gap:20px;
-  border:1px solid #07551b;
-  border-radius:28px;
-  padding:17px;
-  margin:15px 0;
   background:rgba(0,25,0,.8);
+  border:1px solid #07521a;
+  border-radius:28px;
+  padding:18px;
+  margin:15px 0;
 }
+
 .feature-icon {
   min-width:78px;
   height:78px;
-  background:#00dc00;
   border-radius:22px;
+  background:#00d500;
+  color:#001500;
   display:flex;
   justify-content:center;
   align-items:center;
-  color:#001000;
-  font-size:35px;
+  font-size:36px;
 }
-.feature h3 {
-  font-size:21px;
-  margin:0 0 8px;
-}
-.feature p {
-  color:#a1b3a5;
-  font-size:18px;
-  margin:0;
-}
-.limited {
-  color:#ffcf00;
-  font-size:22px;
+
+.feature-title {
+  color:white;
+  font-size:23px;
   font-weight:bold;
-  margin:28px 0;
 }
-.fresher {
+
+.feature-text {
+  color:#a0b5a0;
+  font-size:19px;
+  margin-top:8px;
+  line-height:1.4;
+}
+
+.limited {
+  color:#ffcc00;
+  font-size:25px;
+  font-weight:bold;
+  margin:30px 0 5px;
+}
+
+.freshers {
   display:inline-block;
-  border:1px solid #07551b;
+  border:1px solid #075b1a;
   border-radius:30px;
-  padding:17px 20px;
-  color:#9bb09e;
-  font-size:17px;
-  margin:0 0 25px;
+  padding:15px 20px;
+  color:#b6c6b6;
+  font-size:18px;
+  margin:0 auto 25px;
 }
+
 .footer {
-  font-size:20px;
-  margin-top:25px;
-  color:#fff;
+  color:#ffcc00;
+  font-size:19px;
+  margin-top:15px;
 }
+
 @media(max-width:480px) {
-  .job-page {padding:18px 14px;}
-  .main-title {font-size:30px;}
-  .telegram {font-size:21px;padding:21px 5px;}
-  .project {padding:19px;}
-  .project h3 {font-size:22px;}
-  .limit {font-size:14px;padding:10px;}
+  .main-heading {font-size:29px;}
+  .sub-heading {font-size:19px;}
+  .telegram-btn {
+    min-height:85px;
+    font-size:23px;
+    border-radius:28px;
+    gap:10px;
+  }
+  .telegram-btn span {font-size:27px;}
+  .project-name {font-size:23px;}
+  .limit {font-size:13px;padding:10px;}
+  .feature-icon {min-width:65px;height:65px;}
+  .feature-title {font-size:20px;}
+  .feature-text {font-size:17px;}
 }
 </style>
 
@@ -230,111 +301,144 @@
 
 <div class="seal">
   <div class="seal-inner">
-    <div>★ GOVERNMENT APPROVED ★</div>
-    <div class="emblem">🏛️</div>
-    <div>INDIA</div>
-    <div>WRITING SERVICE</div>
+    WRITING SERVICE
+    <strong>✍</strong>
+    INDIA
+    <small>ASSIGNMENT WORK</small>
   </div>
 </div>
 
-<h1 class="main-title">FREELANCER WRITING PART TIME... ✍️</h1>
-<div class="sub-title">HANDWRITING ASSIGNMENT WORK</div>
+<h1 class="main-heading">
+WORK FROM HOME JOB ✍️
+</h1>
 
-<p class="tagline">
+<div class="sub-heading">
+HANDWRITING ASSIGNMENT WORK
+</div>
+
+<div class="description">
 No Investment · Simple Work · Weekly Payment
-</p>
+</div>
 
-<a class="telegram" href="https://t.me/+VjOqCX2YTPs5N2U9" target="_blank">
-  ➤ JOIN FREE TELEGRAM ➤
+<a href="https://t.me/YOUR_TELEGRAM_LINK"
+class="telegram-btn">
+<span>➤</span>
+JOIN FREE TELEGRAM
+<span>➤</span>
 </a>
 
 <h2 class="section-title">Available Projects</h2>
-<div class="section-sub">Full-time and part-time work</div>
-
-<div class="project">
-  <div class="project-head">
-    <h3>Project 1</h3>
-    <span class="limit">7 DAYS LIMIT</span>
-  </div>
-  <div class="requirement">Page requirement</div>
-  <div class="pages">50 pages <span>(Front + Back = 100)</span></div>
-  <div class="line"></div>
-  <div class="reward-label">REWARD PAYOUT</div>
-  <div class="reward">₹13,500</div>
+<div class="section-subtitle">
+Full-time and part-time work
 </div>
 
-<div class="project">
-  <div class="project-head">
-    <h3>Project 2</h3>
-    <span class="limit">10 DAYS LIMIT</span>
+<div class="project-card">
+  <div class="project-top">
+    <div class="project-name">Project 1</div>
+    <div class="limit">7 DAYS LIMIT</div>
   </div>
-  <div class="requirement">Page requirement</div>
-  <div class="pages">90 pages <span>(Front + Back = 180)</span></div>
-  <div class="line"></div>
-  <div class="reward-label">REWARD PAYOUT</div>
-  <div class="reward">₹19,000</div>
+  <div class="page-label">Page requirement</div>
+  <div class="pages">
+    50 pages <span>(Front + Back = 100)</span>
+  </div>
+  <div class="reward">
+    <div class="reward-label">REWARD PAYOUT</div>
+    <div class="reward-price">₹13,500</div>
+  </div>
 </div>
 
-<div class="project">
-  <div class="project-head">
-    <h3>Project 3</h3>
-    <span class="limit">15 DAYS LIMIT</span>
+<div class="project-card">
+  <div class="project-top">
+    <div class="project-name">Project 2</div>
+    <div class="limit">10 DAYS LIMIT</div>
   </div>
-  <div class="requirement">Page requirement</div>
-  <div class="pages">120 pages <span>(Front + Back = 240)</span></div>
-  <div class="line"></div>
-  <div class="reward-label">REWARD PAYOUT</div>
-  <div class="reward">₹22,000</div>
+  <div class="page-label">Page requirement</div>
+  <div class="pages">
+    90 pages <span>(Front + Back = 180)</span>
+  </div>
+  <div class="reward">
+    <div class="reward-label">REWARD PAYOUT</div>
+    <div class="reward-price">₹19,000</div>
+  </div>
 </div>
 
-<div class="project">
-  <div class="project-head">
-    <h3>Project 4</h3>
-    <span class="limit">26 DAYS LIMIT</span>
+<div class="project-card">
+  <div class="project-top">
+    <div class="project-name">Project 3</div>
+    <div class="limit">15 DAYS LIMIT</div>
   </div>
-  <div class="requirement">Page requirement</div>
-  <div class="pages">190 pages <span>(Front + Back = 380)</span></div>
-  <div class="line"></div>
-  <div class="reward-label">REWARD PAYOUT</div>
-  <div class="reward">₹28,000</div>
+  <div class="page-label">Page requirement</div>
+  <div class="pages">
+    120 pages <span>(Front + Back = 240)</span>
+  </div>
+  <div class="reward">
+    <div class="reward-label">REWARD PAYOUT</div>
+    <div class="reward-price">₹22,000</div>
+  </div>
+</div>
+
+<div class="project-card">
+  <div class="project-top">
+    <div class="project-name">Project 4</div>
+    <div class="limit">26 DAYS LIMIT</div>
+  </div>
+  <div class="page-label">Page requirement</div>
+  <div class="pages">
+    190 pages <span>(Front + Back = 380)</span>
+  </div>
+  <div class="reward">
+    <div class="reward-label">REWARD PAYOUT</div>
+    <div class="reward-price">₹28,000</div>
+  </div>
 </div>
 
 <div class="feature">
-  <div class="feature-icon">♧</div>
+  <div class="feature-icon">♢</div>
   <div>
-    <h3>Job Guarantee</h3>
-    <p>Verified work with weekly payment.</p>
+    <div class="feature-title">Job Support</div>
+    <div class="feature-text">
+      Project details and payment terms available.
+    </div>
   </div>
 </div>
 
 <div class="feature">
   <div class="feature-icon">♙</div>
   <div>
-    <h3>Flexible Work</h3>
-    <p>Part time and full time available.</p>
+    <div class="feature-title">Flexible Work</div>
+    <div class="feature-text">
+      Part time and full time available.
+    </div>
   </div>
 </div>
 
 <div class="feature">
   <div class="feature-icon">₹</div>
   <div>
-    <h3>Monthly Earning</h3>
-    <p>Earn ₹18,000 – ₹25,000 monthly.</p>
+    <div class="feature-title">Monthly Earning</div>
+    <div class="feature-text">
+      Earnings depend on completed work and project terms.
+    </div>
   </div>
 </div>
 
-<div class="limited">⚡ Limited Seats Available 🚀</div>
+<div class="limited">
+⚡ Limited Seats Available 🚀
+</div>
 
-<a class="telegram" href="https://t.me/+VjOqCX2YTPs5N2U9" target="_blank">
-  ➤ JOIN FREE TELEGRAM ➤
+<a href="https://t.me/YOUR_TELEGRAM_LINK"
+class="telegram-btn">
+<span>➤</span>
+JOIN FREE TELEGRAM
+<span>➤</span>
 </a>
 
-<div class="fresher">
-  ✔ Fresher & Students Can Apply ✔
+<div class="freshers">
+✔ Freshers & Students Can Apply ✔
 </div>
 
 <div class="footer">
-  Powered By Ankul Ad Agency
+Ads by Deep Ads Agency
 </div>
 
 </div>
